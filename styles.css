@@ -1,0 +1,88 @@
+   /* General styles */
+   body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Main Content */
+.main {
+    display: flex;
+    flex: 1;
+    /* Ocupa el espacio restante */
+}
+
+.content {
+    flex: 3;
+    /* El contenido principal ocupa más espacio */
+    background-color: #f4f4f4;
+    padding: 1rem;
+}
+
+.sidebar {
+    flex: 1;
+    /* La barra lateral ocupa menos espacio */
+    background-color: #ddd;
+    padding: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        /* Cambia la dirección a columna */
+    }
+
+    .content {
+        flex: 1;
+        /* El contenido toma el 100% del ancho */
+    }
+
+    .sidebar {
+        flex: 1;
+        /* La barra lateral también toma el 100% del ancho */
+    }
+}
+    /* 
+Explicación:
+1.	Container:
+•	Usa display: flex para que los elementos hijos (header, main, footer) se posicionen en un contenedor flexible.
+•	flex-direction: column asegura que los hijos se apilen verticalmente.
+2.	Header y Footer:
+•	Simples bloques con color de fondo, centrados con text-align: center.
+3.	Main:
+•	Contiene dos hijos (content y sidebar) con display: flex.
+•	Usamos flex: 3 y flex: 1 para controlar el tamaño relativo entre el contenido y la barra lateral.
+
+
+Media queries
+
+.	Media Query (@media):
+•	Se usa para aplicar estilos específicos solo cuando el ancho de la pantalla es más pequeño que un valor determinado. En este caso, estamos usando max-width: 768px, lo que significa que los estilos dentro de esta regla se aplicarán a pantallas que tengan un ancho menor o igual a 768px (como en dispositivos móviles).
+2.	Reorganización del Layout:
+•	Dentro de la media query, cambiamos el main para que utilice flex-direction: column, lo que hará que los elementos dentro de main se apilen en una sola columna.
+•	Tanto el contenido como la barra lateral (.content y .sidebar) ocupan el 100% del ancho disponible (utilizando flex: 1), lo que hace que se muestren uno debajo del otro.
+
+
+*/
